@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/CH0qsh6/600a9a3f34497343f4cc8e3c0feb56e0.jpg",
+      "name": "Intel"
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/hg0YMTT/2c46a7151e9739826f9ac8ed9da5e2ba.jpg",
+      "name": "Sony"
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/ydsDg5X/HD-wallpaper-samsung-logo.jpg",
+      "name": "Samsung"
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/LtyKgdt/wp2668027.jpg",
+      "name": "Apple"
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/cvd4BhD/HD-wallpaper-asus-carbon-logo-grunge-art-carbon-background-creative-asus-black-logo-asus-logo-asus.jpg",
+      "name": "Asus"
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/3zFqPgK/HD-wallpaper-lenovo-logo-gray-creative-background-lenovo-emblem-gray-paper-texture-lenovo-gray-backg.jpg",
+      "name": "Lenovo"
+    }
+  ]
+  
