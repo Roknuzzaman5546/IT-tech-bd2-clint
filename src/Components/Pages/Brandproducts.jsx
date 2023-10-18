@@ -6,7 +6,6 @@ const Brandproducts = () => {
     const {id} = useParams()
     console.log(loadedproducts, id)
     const products = loadedproducts.filter(product => product.brand === id)
-    console.log(products)
 
     return (
         <div>
