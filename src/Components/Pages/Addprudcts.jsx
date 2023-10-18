@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const Addprudcts = () => {
 
     const handleadd = event => {
@@ -22,6 +24,13 @@ const Addprudcts = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Product added succesfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+                  form.reset()
             })
     }
 
@@ -50,7 +59,10 @@ const Addprudcts = () => {
                             <select name="brand" id="" className="file-input file-input-bordered w-full">
                                 <option value="Apple">Apple</option>
                                 <option value="Samsung">Samsung</option>
-                                <option value="Samsung">Lenovo</option>
+                                <option value="Lenovo">Lenovo</option>
+                                <option value="Asus">Asus</option>
+                                <option value="Sony">Sony</option>
+                                <option value="Intel">Intel</option>
                             </select>
                         </div>
                     </div>

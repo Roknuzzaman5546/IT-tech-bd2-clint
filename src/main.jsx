@@ -11,6 +11,7 @@ import Addprudcts from './Components/Pages/Addprudcts';
 import Mycard from './Components/Pages/Mycard';
 import Login from './Components/Pages/Login';
 import Brandproducts from './Components/Pages/Brandproducts';
+import Carddetails from './Components/Pages/Carddetails';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: "/brandproducts/:id",
         element: <Brandproducts></Brandproducts>,
+        loader: () => fetch('http://localhost:5000/product')
+      },
+      {
+        path: "/carddetails/:id",
+        element: <Carddetails></Carddetails>,
         loader: () => fetch('http://localhost:5000/product')
       } 
     ]
