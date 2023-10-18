@@ -2,18 +2,22 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../Authprovider/Authprovider";
 
-const Login = () => {
-    const { userGooglelogin } = useContext(Authcontext)
-    // console.log(userGooglelogin)
+const Register = () => {
+    const { userRegister } = useContext(Authcontext)
 
-    const handleGoogleLogin = () => {
-        userGooglelogin()
-        .then(result => {
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.error(error)
-        })
+    const handleRegister = e => {
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+        userRegister(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
     return (
@@ -21,10 +25,10 @@ const Login = () => {
             <div className="hero min-h-screen bg-orange-300">
                 <div className="hero-content flex-col">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold">Register now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-orange-500">
-                        <form className="card-body" >
+                        <form className="card-body" onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -41,10 +45,9 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Register</button>
                             </div>
-                                <button className="btn btn-primary" onClick={handleGoogleLogin}>Google</button>
-                            <h2>If you new go to btn <Link to='/register' className=" font-bold text-blue-600 text-xl">Register</Link></h2>
+                            <h2>Have you an acount go to <Link to='/login' className="font-bold text-blue-600 text-xl">Log in</Link></h2>
                         </form>
                     </div>
                 </div>
@@ -53,4 +56,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

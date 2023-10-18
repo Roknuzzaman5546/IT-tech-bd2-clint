@@ -13,6 +13,8 @@ import Login from './Components/Pages/Login';
 import Brandproducts from './Components/Pages/Brandproducts';
 import Carddetails from './Components/Pages/Carddetails';
 import Updatecrads from './Components/Pages/Updatecrads';
+import Register from './Components/Pages/Register';
+import Authprovider from './Components/Authprovider/Authprovider';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
         loader: () => fetch('/cetagory.json')
       },
       {
-        path:"/addproducts",
+        path: "/addproducts",
         element: <Addprudcts></Addprudcts>
       },
       {
@@ -50,7 +52,11 @@ const router = createBrowserRouter([
       {
         path: "/updatproducts/:id",
         element: <Updatecrads></Updatecrads>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
     ]
   },
@@ -58,6 +64,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>,
 )

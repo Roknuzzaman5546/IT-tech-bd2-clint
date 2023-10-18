@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
 
 const Mycarddetails = ({ mycard }) => {
-    const { _id, name, photo, rating, brand, price } = mycard;
+    const {  name, photo, rating, brand, price } = mycard;
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -21,5 +22,9 @@ const Mycarddetails = ({ mycard }) => {
         </div>
     );
 };
+
+Mycarddetails.propTypes ={
+    mycard: PropTypes.object
+}
 
 export default Mycarddetails;
