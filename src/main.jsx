@@ -15,6 +15,7 @@ import Carddetails from './Components/Pages/Carddetails';
 import Updatecrads from './Components/Pages/Updatecrads';
 import Register from './Components/Pages/Register';
 import Authprovider from './Components/Authprovider/Authprovider';
+import Privetrout from './Privetrout/Privetrout';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/mycard",
-        element: <Mycard></Mycard>,
+        element: <Privetrout><Mycard></Mycard></Privetrout>,
         loader: () => fetch('http://localhost:5000/card')
       },
       {

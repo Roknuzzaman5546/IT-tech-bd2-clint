@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const Mycarddetails = ({ mycard }) => {
@@ -15,7 +16,7 @@ const Mycarddetails = ({ mycard }) => {
                         <p>{rating}</p>
                     </div>
                     <div className="card-actions justify-center mt-3">
-                        <button className="btn btn-primary">Buy now</button>
+                        <button className="btn btn-primary"><Link>Delelte</Link></button>
                     </div>
                 </div>
             </div>

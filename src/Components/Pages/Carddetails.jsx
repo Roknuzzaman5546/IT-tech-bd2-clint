@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 const Carddetails = () => {
     const cards = useLoaderData();
     const { id } = useParams();
+    console.log(id)
     const findcards = cards.find(card => card._id === id)
 
     const handlAddcard = () => {

@@ -4,7 +4,6 @@ import Productsdetails from "./Productsdetails";
 const Brandproducts = () => {
     const loadedproducts = useLoaderData()
     const {id} = useParams()
-    console.log(loadedproducts, id)
     const products = loadedproducts.filter(product => product.brand === id)
 
     return (

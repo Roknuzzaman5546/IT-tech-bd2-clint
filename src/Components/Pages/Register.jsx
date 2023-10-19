@@ -1,9 +1,13 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Authcontext } from "../Authprovider/Authprovider";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { userRegister } = useContext(Authcontext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const [error, setError] = useState(null);
 
     const handleRegister = e => {
         e.preventDefault()
@@ -11,12 +15,31 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        setError('')
+        if (!/[A-Z]/.test(password)) {
+            return setError('Please Type password at least 1 capital letter')
+        }
+        if (!/[!@#$%^&*()]/.test(password)) {
+            return setError(' Password should be 1 Speachial cerarcter')
+        }
         userRegister(email, password)
             .then(result => {
-                console.log(result.user)
+                const user = result.user;
+                if (user) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'User register succesfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    setTimeout(() => {
+                        navigate(location?.state ? location.state : '/')
+                    }, 1500)
+                }
+
             })
             .catch(error => {
-                console.error(error)
+                setError(error.message)
             })
     }
 
@@ -44,6 +67,9 @@ const Register = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
+                            {
+                                error && <p className=" text-red-600">{error}</p>
+                            }
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>
