@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproducts",
-        element: <Addprudcts></Addprudcts>
+        element: <Privetrout><Addprudcts></Addprudcts></Privetrout>
       },
       {
         path: "/mycard",
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/brandproducts/:id",
-        element: <Brandproducts></Brandproducts>,
+        element: <Privetrout><Brandproducts></Brandproducts></Privetrout>,
         loader: () => fetch('http://localhost:5000/product')
       },
       {

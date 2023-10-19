@@ -19,7 +19,6 @@ const Headars = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addproducts">Addproducts</NavLink></li>
         <li><NavLink to="/mycard">My card</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
     </>
 
     return (
@@ -34,16 +33,19 @@ const Headars = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-2xl italic font-bold">I <span className=" text-red-500">TEC</span> BD</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end flex md:flex-row flex-col">
                     {
-                        user ? <a className="btn" onClick={handleLogout}>Sign out</a> : <a className="btn">Log in</a>
+                        user ? <h2 className=" text-xl font-bold mr-2 text-lime-400">{user.displayName}</h2> : ''
+                    }
+                    {
+                        user ? <a className="btn" onClick={handleLogout}> Sign out </a> : <li className="btn"><NavLink to="/login">Login</NavLink></li>
                     }
                 </div>
             </div>

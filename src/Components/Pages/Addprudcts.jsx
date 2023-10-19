@@ -44,7 +44,7 @@ const Addprudcts = () => {
                         </label>
                         <input type="text" name="photo" placeholder=" Photo" className="file-input file-input-bordered w-full" />
                     </div>
-                    <div className=" flex gap-7">
+                    <div className=" flex md:flex-row flex-col gap-7">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -55,7 +55,6 @@ const Addprudcts = () => {
                             <label className="label">
                                 <span className="label-text">Brand name</span>
                             </label>
-                            {/* <input type="text" name="brand" placeholder=" Your name" className="file-input file-input-bordered w-full" /> */}
                             <select name="brand" id="" className="file-input file-input-bordered w-full">
                                 <option value="Apple">Apple</option>
                                 <option value="Samsung">Samsung</option>
@@ -66,7 +65,7 @@ const Addprudcts = () => {
                             </select>
                         </div>
                     </div>
-                    <div className=" flex gap-7">
+                    <div className=" flex md:flex-row flex-col gap-7">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Category </span>
@@ -80,7 +79,7 @@ const Addprudcts = () => {
                             <input type="text" name="price" placeholder=" Price" className="file-input file-input-bordered w-full" />
                         </div>
                     </div>
-                    <div className=" flex gap-7">
+                    <div className=" flex md:flex-row flex-col gap-7">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Short description

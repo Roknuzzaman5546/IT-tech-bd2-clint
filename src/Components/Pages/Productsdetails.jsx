@@ -36,7 +36,7 @@ const Productsdetails = ({ product }) => {
     );
 };
 
-Productsdetails.propTypes ={
+Productsdetails.propTypes = {
     product: PropTypes.object
 }
 

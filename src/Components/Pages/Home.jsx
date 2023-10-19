@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
-import banner from '../../assets/banner2.jpg'
+import banner from '../../assets/banner1.jpg'
 import Branddetails from './Branddetails';
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
                     <h2 className=' text-4xl font-bold text-red-400'>Brand name</h2>
                     <p className=' text-xs italic'>Our all brand is here..Click our brand see details</p>
                 </div>
-                <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 '>
+                <div className=' grid lg:grid-cols-3 mt-5 md:grid-cols-2 grid-cols-1 gap-4'>
                     {
                         brands.map(brand => <Branddetails key={brand.id} brand={brand}></Branddetails>)
                     }
