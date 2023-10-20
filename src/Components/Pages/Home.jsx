@@ -10,18 +10,18 @@ const Home = () => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
-                            <h1 className="mb-5 text-5xl font-bold">I <span className=' text-red-600'>Tech</span> bd</h1>
+                            <h1 className="mb-5 text-5xl font-rancho font-bold">I <span className=' text-red-600'>Tech</span> bd</h1>
                             <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                            <button className="btn btn-primary">Get Offer</button>
+                            <button className="btn btn-primary">Get Offer </button>
                         </div>
                     </div>
                 </div>
 
             </div>
             <div>
-                <div className=' mt-10 text-center'>
-                    <h2 className=' text-4xl font-bold text-red-400'>Brand name</h2>
-                    <p className=' text-xs italic'>Our all brand is here..Click our brand see details</p>
+                <div className=' mt-20 mb-10 text-center'>
+                    <h2 className=' text-4xl font-bold font-rancho text-red-500 underline'>All Brands</h2>
+                    <p className=' text-xl font-rancho'>Our all brand is here..Click our brand see details</p>
                 </div>
                 <div className=' grid lg:grid-cols-3 mt-5 md:grid-cols-2 grid-cols-1 gap-4'>
                     {

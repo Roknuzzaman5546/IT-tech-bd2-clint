@@ -45,14 +45,14 @@ const Carddetails = () => {
             <div className=" flex md:flex-row flex-col justify-between items-center">
                 <div className=" w-full">
                     <img className=" w-1/2" src={findcards.photo} alt="" />
-                    <p className=" font-bold italic mt-2 w-4/6"><span className=" text-orange-500 font-bold">Details: </span>{findcards.description}</p>
+                    <p className=" font-bold italic mt-2 w-4/6"><span className=" text-gray-800 text-xl font-bold">Details: </span>{findcards.description}</p>
                 </div>
-                <div className=" border-2 w-full  border-lime-300 p-5 rounded-md">
+                <div className=" border-2 w-full  border-gray-500 p-5 rounded-md">
                     <h2 className=" text-2xl font-bold text-sky-500 ">Brand: {findcards.brand}</h2>
                     <h2 className=" text-2xl font-bold text-orange-500 ">Name: {findcards.name}</h2>
                     <p className=" font-bold">Price: {findcards.price}</p>
                     <p className=" font-bold">Rating: {findcards.rating}</p>
-                    <button className=" btn btn-outline btn-secondary mt-4" onClick={handlAddcard}>Add to card</button>
+                    <button className=" btn btn-outline mt-4" onClick={handlAddcard}>Add to card</button>
                 </div>
             </div>
         </div>

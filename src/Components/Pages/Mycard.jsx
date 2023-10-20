@@ -42,8 +42,8 @@ const Mycard = () => {
 
     return (
         <div className=" w-11/12 mx-auto">
-            <h2 className=" text-center text-3xl text-amber-500 font-bold mt-10">Your all add products here</h2>
-            <div className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4 mt-20">
+            <h2 className=" text-center font-rancho underline text-4xl text-gray-600 font-bold mt-10">Your all add products here</h2>
+            <div className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4 mt-10">
                 {
                     reaminguser.map(mycard => <div key={mycard._id}>
                         <div className="card bg-gray-400 border-2 border-lime-600 h-96 shadow-xl">

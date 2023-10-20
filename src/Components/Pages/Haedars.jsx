@@ -36,7 +36,7 @@ const Headars = () => {
                     </div>
                     <div className=" flex gap-1 items-center">
                         <img className=" w-11 rounded-3xl" src={logo} alt="" />
-                        <a className="btn btn-ghost normal-case text-3xl italic font-bold">I <span className=" text-red-500">TECH</span> BD</a>
+                        <a className="btn btn-ghost normal-case text-3xl font-rancho italic font-bold">I <span className=" text-red-500">TECH</span> BD</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -46,10 +46,10 @@ const Headars = () => {
                 </div>
                 <div className="navbar-end flex md:flex-row flex-col">
                     {
-                        user ? <h2 className=" text-xl font-bold mr-2 text-lime-400">{user.displayName}</h2> : ''
+                        user ? <h2 className=" text-xl font-bold mr-2 text-gray-600 btn btn-outline">{user.displayName}</h2> : ''
                     }
                     {
-                        user ? <a className="btn font-bold" onClick={handleLogout}> Sign out </a> : <li className="btn font-bold"><NavLink to="/login">Login</NavLink></li>
+                        user ? <a className="btn font-bold btn-outline" onClick={handleLogout}> Sign out </a> : <li className="btn font-bold btn-outline"><NavLink to="/login">Login</NavLink></li>
                     }
                 </div>
             </div>
