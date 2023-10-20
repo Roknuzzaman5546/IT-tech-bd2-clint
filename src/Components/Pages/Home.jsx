@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 import Branddetails from './Branddetails';
-import { AiOutlineRight } from "react-icons/ai";
+import { AiFillFacebook, AiFillPhone, AiFillTwitterSquare, AiOutlineMail, AiOutlineRight } from "react-icons/ai";
 import Threepriducts from './Threepriducts';
 import { useEffect, useState } from 'react';
 
@@ -54,6 +54,27 @@ const Home = () => {
                     </div>
                 </section>
             </div>
+
+            <section className='w-11/12 mx-auto h-20 border-2 border-gray-300 bg-gray-300'>
+                <div className=' grid lg:grid-cols-4 grid-cols-2 p-4 gap-4'>
+                    <div className=' flex justify-center items-center'>
+                        <h3 className=' text-2xl font-bold font-rancho text-red-600'>Call us</h3>
+                        <div className=' text-2xl font-bold ml-2 text-green-500'><AiFillPhone></AiFillPhone> </div>
+                    </div>
+                    <div className=' flex justify-center items-center'>
+                        <h3 className=' text-2xl font-bold font-rancho text-red-600'>Send mail</h3>
+                        <div className=' ml-2 text-2xl font-bold text-green-500'> <AiOutlineMail></AiOutlineMail> </div>
+                    </div>
+                    <div className=' flex justify-center items-center'>
+                        <h3 className=' text-2xl font-bold font-rancho text-red-600'>Contact facebook with us</h3>
+                        <div className=' ml-2 text-2xl font-bold text-green-500'> <AiFillFacebook></AiFillFacebook> </div>
+                    </div>
+                    <div className=' flex justify-center items-center'>
+                        <h3 className=' ml-4 text-2xl font-bold font-rancho text-red-600'> Contat Tweiter</h3>
+                        <div className=' text-2xl font-bold text-green-500'> <AiFillTwitterSquare></AiFillTwitterSquare> </div>
+                    </div>
+                </div>
+            </section>
 
             <div className='bg-neutral mt-20'>
                 <footer className="footer p-10 text-neutral-content w-4/5 mx-auto">
