@@ -25,7 +25,7 @@ const Carddetails = () => {
     }
     
     const handlAddcard = () => {
-        fetch(`http://localhost:5000/card`, {
+        fetch(`https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/card`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -46,7 +46,7 @@ const Carddetails = () => {
 
     return (
         <div className=" w-4/5 mx-auto mt-20 mb-5">
-            <div className=" flex md:flex-row flex-col justify-between gap-5 items-center">
+            <div className=" flex md:flex-row flex-col justify-between gap-4 items-center">
                 <div className=" w-full">
                     <img className=" w-1/2" src={findcards.photo} alt="" />
                     <p className=" font-bold italic mt-2 w-4/6"><span className=" text-gray-800 text-xl font-bold">Details: </span>{findcards.description}</p>

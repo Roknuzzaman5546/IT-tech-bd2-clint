@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/mycard",
         element: <Privetrout><Mycard></Mycard></Privetrout>,
-        loader: () => fetch('http://localhost:5000/card')
+        loader: () => fetch('https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/card')
       },
       {
         path: "/login",
@@ -43,17 +43,17 @@ const router = createBrowserRouter([
       {
         path: "/brandproducts/:id",
         element: <Privetrout><Brandproducts></Brandproducts></Privetrout>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/product')
       },
       {
         path: "/carddetails/:id",
         element: <Carddetails></Carddetails>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/product')
       },
       {
         path: "/updatproducts/:id",
         element: <Updatecrads></Updatecrads>,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/product/${params.id}`)
       },
       {
         path: "/register",

@@ -13,7 +13,7 @@ const Addprudcts = () => {
         const rating = form.rating.value;
         console.log(name, photo, brand, category, price, description, rating)
         const productdata = { name, photo, brand, category, price, description, rating }
-        fetch('http://localhost:5000/product', {
+        fetch('https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/product', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

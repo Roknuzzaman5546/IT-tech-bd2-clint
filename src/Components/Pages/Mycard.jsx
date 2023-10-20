@@ -21,7 +21,7 @@ const Mycard = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/card/${id}`, {
+                fetch(`https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/card/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
