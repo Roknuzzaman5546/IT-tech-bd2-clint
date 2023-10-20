@@ -6,11 +6,11 @@ const Productsdetails = ({ product }) => {
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img className="h-60" src={photo} alt="Shoes" /></figure>
+            <div className="card bg-gray-400 border-2 border-lime-500 shadow-xl">
+                <figure><img className="h-72 w-full" src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <p className="card-title font-bold text-purple-700">{name}</p>
-                    <h2 className="card-title font-bold text-purple-700">{brand}</h2>
+                    <h2 className="card-title font-bold text-gray-700">{brand}</h2>
                     <p className=" text-orange-500">Price: {price}</p>
                     <div className=" flex">
                         <p>{rating}</p>

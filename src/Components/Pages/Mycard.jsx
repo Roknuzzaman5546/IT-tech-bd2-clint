@@ -1,11 +1,13 @@
 import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { Authcontext } from "../Authprovider/Authprovider";
 
 const Mycard = () => {
-
+    const { user } = useContext(Authcontext)
     const loadedmycards = useLoaderData();
-    const [user, setUser] = useState(loadedmycards)
+    const filterUser = loadedmycards.filter(card => card.useremail === user.email)
+    const [reaminguser, setUser] = useState(filterUser)
 
     const handleDelet = (id) => {
         console.log(id)
@@ -31,7 +33,7 @@ const Mycard = () => {
                                 'Your file has been deleted.',
                                 'success'
                             )
-                            const remaings = loadedmycards.filter(cards => cards._id !== id)
+                            const remaings = filterUser.filter(cards => cards._id !== id)
                             setUser(remaings)
                         }
                     })
@@ -44,8 +46,8 @@ const Mycard = () => {
             <h2 className=" text-center text-3xl text-amber-500 font-bold mt-10">Your all add products here</h2>
             <div className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4 mt-20">
                 {
-                    user.map(mycard => <div key={mycard._id}>
-                        <div className="card bg-pink-300 h-96 shadow-xl">
+                    reaminguser.map(mycard => <div key={mycard._id}>
+                        <div className="card bg-gray-400 border-2 border-lime-600 h-96 shadow-xl">
                             <figure><img className=" h-48 w-full" src={mycard.photo} alt="Shoes" /></figure>
                             <div>
                                 <p className=" ml-2 mt-3 font-bold bg-">{mycard.name}</p>

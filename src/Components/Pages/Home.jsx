@@ -1,12 +1,23 @@
 import { useLoaderData } from 'react-router-dom';
-import banner from '../../assets/banner1.jpg'
 import Branddetails from './Branddetails';
 
 const Home = () => {
     const brands = useLoaderData();
     return (
         <div>
-            <img className=' mt-5 w-screen md:h-96 h-80' src={banner} alt="" />
+            <div>
+                <div className="hero mt-10 min-h-screen" style={{ backgroundImage: `url(https://i.ibb.co/H7ptWgx/banner1.jpg)` }}>
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold">I <span className=' text-red-600'>Tech</span> bd</h1>
+                            <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                            <button className="btn btn-primary">Get Offer</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             <div>
                 <div className=' mt-10 text-center'>
                     <h2 className=' text-4xl font-bold text-red-400'>Brand name</h2>
