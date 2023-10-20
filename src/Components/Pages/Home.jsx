@@ -9,11 +9,11 @@ const Home = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/product')
+        fetch('https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-
+ 
     return (
         <div>
             <div>

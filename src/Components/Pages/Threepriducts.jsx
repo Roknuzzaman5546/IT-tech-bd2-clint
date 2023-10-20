@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const Threepriducts = ({ product }) => {
     const { name, rating, price, photo } = product;
@@ -18,5 +19,9 @@ const Threepriducts = ({ product }) => {
         </div>
     );
 };
+
+Threepriducts.propTypes = {
+    product: PropTypes.object
+}
 
 export default Threepriducts;

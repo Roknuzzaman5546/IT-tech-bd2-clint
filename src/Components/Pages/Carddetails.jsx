@@ -25,7 +25,7 @@ const Carddetails = () => {
     }
     
     const handlAddcard = () => {
-        fetch(`https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/card`, {
+        fetch(`https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/card`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

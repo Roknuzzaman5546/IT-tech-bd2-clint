@@ -16,7 +16,7 @@ const Updatecrads = () => {
         const rating = form.rating.value;
         console.log(name, photo, brand, category, price, description, rating)
         const productsUpdate = { name, photo, brand, category, price, description, rating }
-        fetch(`https://assingment10-project-server-lfer62237-rokonuzzamans-projects.vercel.app/product/${products._id}`, {
+        fetch(`https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/product/${products._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
