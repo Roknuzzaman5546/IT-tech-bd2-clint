@@ -27,7 +27,6 @@ const Mycard = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
-                        if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
@@ -35,7 +34,7 @@ const Mycard = () => {
                             )
                             const remaings = filterUser.filter(cards => cards._id !== id)
                             setUser(remaings)
-                        }
+                        
                     })
             }
         })

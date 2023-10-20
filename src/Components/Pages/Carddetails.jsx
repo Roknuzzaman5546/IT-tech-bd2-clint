@@ -4,8 +4,21 @@ import Swal from "sweetalert2";
 const Carddetails = () => {
     const cards = useLoaderData();
     const { id } = useParams();
-    console.log(id)
     const findcards = cards.find(card => card._id === id)
+
+    const name = findcards.name;
+    const photo = findcards.photo;
+    const brand = findcards.brand;
+    const category = findcards.category;
+    const price = findcards.price;
+    const description = findcards.description;
+    const rating = findcards.rating;
+    const useremail = findcards.useremail;
+
+    const carddata = {
+        name, photo, brand, category, price, description, rating,
+        useremail
+    }
 
     const handlAddcard = () => {
         fetch(`http://localhost:5000/card`, {
@@ -13,7 +26,7 @@ const Carddetails = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(findcards)
+            body: JSON.stringify(carddata)
         })
             .then(res => res.json())
             .then(data => {
@@ -43,7 +56,7 @@ const Carddetails = () => {
                 </div>
             </div>
         </div>
-    ); 
+    );
 };
 
 export default Carddetails;
