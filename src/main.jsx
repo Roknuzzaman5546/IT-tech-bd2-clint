@@ -16,11 +16,13 @@ import Updatecrads from './Components/Pages/Updatecrads';
 import Register from './Components/Pages/Register';
 import Authprovider from './Components/Authprovider/Authprovider';
 import Privetrout from './Privetrout/Privetrout';
+import Erorrepage from './Components/Pages/Erorrepage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roots></Roots>,
+    errorElement: <Erorrepage></Erorrepage>,
     children: [
       {
         path: "/",
