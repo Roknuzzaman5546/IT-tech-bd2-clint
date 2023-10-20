@@ -1,8 +1,19 @@
 import { useLoaderData } from 'react-router-dom';
 import Branddetails from './Branddetails';
+import { AiOutlineRight } from "react-icons/ai";
+import Threepriducts from './Threepriducts';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
     const brands = useLoaderData();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/product')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+
     return (
         <div>
             <div>
@@ -10,9 +21,9 @@ const Home = () => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
-                            <h1 className="mb-5 text-5xl font-rancho font-bold">I <span className=' text-red-600'>Tech</span> bd</h1>
-                            <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                            <button className="btn btn-primary">Get Offer </button>
+                            <h1 className="mb-5 text-7xl font-rancho font-bold">I <span className=' text-red-600'>Tech</span> bd</h1>
+                            <p className="mb-5 font-rancho">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                            <button className="btn btn-primary"> See our Offer <AiOutlineRight></AiOutlineRight></button>
                         </div>
                     </div>
                 </div>
@@ -28,6 +39,20 @@ const Home = () => {
                         brands.map(brand => <Branddetails key={brand.id} brand={brand}></Branddetails>)
                     }
                 </div>
+                <section className='my-20 w-11/12 mx-auto'>
+                    <div className='text-center mb-10'>
+                        <h2 className=' text-5xl font-bold font-rancho text-red-500'>Our top rated propdutcs</h2>
+                        <p className=' mt-2 font-rancho'>If you buy anything from here this month then you are getting great offers. <br />If you want to buy more of our products, buy them here</p>
+                    </div>
+                    <div className=' grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4'>
+                        {
+                            products.slice(0, 8).map(product => <Threepriducts
+                                key={product._id}
+                                product={product}
+                            ></Threepriducts>)
+                        }
+                    </div>
+                </section>
             </div>
 
             <div className='bg-neutral mt-20'>

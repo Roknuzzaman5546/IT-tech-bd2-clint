@@ -27,7 +27,7 @@ const Productsdetails = ({ product }) => {
                             <button className="btn btn-primary"><Link to={`/carddetails/${_id}`}>Details</Link></button>
                         </div>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary"><Link to={`/updatproducts/${name}`}>Update</Link></button>
+                            <button className="btn btn-primary"><Link to={`/updatproducts/${_id}`}>Update</Link></button>
                         </div>
                     </div>
                 </div>

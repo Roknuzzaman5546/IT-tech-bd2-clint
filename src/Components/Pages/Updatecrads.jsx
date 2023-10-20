@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const Updatecrads = () => {
     const products = useLoaderData()
-
+    
     const handlUpdate = event => {
         event.preventDefault()
         const form = event.target;

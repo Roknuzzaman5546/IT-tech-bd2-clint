@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Authcontext } from "../Authprovider/Authprovider";
 
 const Carddetails = () => {
+    const {user} = useContext(Authcontext)
+
     const cards = useLoaderData();
     const { id } = useParams();
     const findcards = cards.find(card => card._id === id)
@@ -13,13 +17,13 @@ const Carddetails = () => {
     const price = findcards.price;
     const description = findcards.description;
     const rating = findcards.rating;
-    const useremail = findcards.useremail;
+    const useremail = user.email;
 
     const carddata = {
         name, photo, brand, category, price, description, rating,
         useremail
     }
-
+    
     const handlAddcard = () => {
         fetch(`http://localhost:5000/card`, {
             method: 'POST',
@@ -42,7 +46,7 @@ const Carddetails = () => {
 
     return (
         <div className=" w-4/5 mx-auto mt-20 mb-5">
-            <div className=" flex md:flex-row flex-col justify-between items-center">
+            <div className=" flex md:flex-row flex-col justify-between gap-5 items-center">
                 <div className=" w-full">
                     <img className=" w-1/2" src={findcards.photo} alt="" />
                     <p className=" font-bold italic mt-2 w-4/6"><span className=" text-gray-800 text-xl font-bold">Details: </span>{findcards.description}</p>

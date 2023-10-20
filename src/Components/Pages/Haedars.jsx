@@ -44,9 +44,9 @@ const Headars = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end flex md:flex-row flex-col">
+                <div className="navbar-end flex md:flex-row flex-col-reverse gap-2 items-center">
                     {
-                        user ? <h2 className=" text-xl font-bold mr-2 text-gray-600 btn btn-outline">{user.displayName}</h2> : ''
+                        user ? <h2 className=" font-bold mr-2 text-gray-600 btn btn-outline">{user.displayName}</h2> : ''
                     }
                     {
                         user ? <a className="btn font-bold btn-outline" onClick={handleLogout}> Sign out </a> : <li className="btn font-bold btn-outline"><NavLink to="/login">Login</NavLink></li>

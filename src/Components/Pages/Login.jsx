@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Authcontext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import {  FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const { userGooglelogin, userSignin } = useContext(Authcontext)
@@ -82,13 +83,13 @@ const Login = () => {
                                 </label>
                             </div>
                             {
-                                error && <p className=" font-bold text-red-500 text-sm">{error}</p>
+                                error && <p className=" font-bold text-red-600 text-sm">{error}</p>
                             }
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-neutral">Login</button>
                             </div>
-                            <button className="btn btn-primary" onClick={handleGoogleLogin}>Google</button>
-                            <h2>If you new go to btn <Link to='/register' className=" font-bold text-blue-600 text-xl">Register</Link></h2>
+                            <button className="btn font-bold text-xl btn-outline" onClick={handleGoogleLogin}> <FcGoogle></FcGoogle> Google</button>
+                            <h2>If you new go to <Link to='/register' className=" font-bold text-blue-600 text-xl">Register</Link></h2>
                         </form>
                     </div>
                 </div>
