@@ -1,8 +1,6 @@
-# React + Vite
+#             IT TECH BD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a technical ecomarse website..Here have many tehcnical barans product for buy users.
+Here home page have 6 type of brand products if you click this product you go to this band product all item..and if you go to add products you add many products in my site and are have many feture of my site if you visit my site then you show all the feture.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Site Live link: https://assingment-10-projects.web.app/
