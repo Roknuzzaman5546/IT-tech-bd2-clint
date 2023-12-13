@@ -3,21 +3,30 @@ import Branddetails from './Branddetails';
 import { AiFillFacebook, AiFillPhone, AiFillTwitterSquare, AiOutlineMail, AiOutlineRight } from "react-icons/ai";
 import Threepriducts from './Threepriducts';
 import { useEffect, useState } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const Home = () => {
     const brands = useLoaderData();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/product')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+    useEffect(() => {
+        AOS.init({
+            duration: 700,
+            offset: 200
+        });
+    }, []);
  
     return (
         <div>
             <div>
-                <div className="hero mt-10 min-h-screen" style={{ backgroundImage: `url(https://i.ibb.co/H7ptWgx/banner1.jpg)` }}>
+                <div className="hero min-h-screen" style={{ backgroundImage: `url(https://i.ibb.co/H7ptWgx/banner1.jpg)` }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
@@ -30,16 +39,16 @@ const Home = () => {
 
             </div>
             <div>
-                <div className=' mt-20 mb-10 text-center'>
+                <div data-aos="fade-up"  className=' mt-20 mb-10 text-center'>
                     <h2 className=' text-4xl font-bold font-rancho text-red-500 underline'>All Brands</h2>
                     <p className=' text-xl font-rancho'>Our all brand is here..Click our brand see details</p>
                 </div>
-                <div className=' grid lg:grid-cols-3 mt-5 md:grid-cols-2 grid-cols-1 gap-4'>
+                <div data-aos='zoom-in' className=' grid lg:grid-cols-3 mt-5 md:grid-cols-2 grid-cols-1 gap-4'>
                     {
                         brands.map(brand => <Branddetails key={brand.id} brand={brand}></Branddetails>)
                     }
                 </div>
-                <section className='my-20 w-11/12 mx-auto'>
+                <section data-aos="zoom-in" className='my-20 w-11/12 mx-auto'>
                     <div className='text-center mb-10'>
                         <h2 className=' text-5xl font-bold font-rancho text-red-500'>Our top rated propdutcs</h2>
                         <p className=' mt-2 font-rancho'>If you buy anything from here this month then you are getting great offers. <br />If you want to buy more of our products, buy them here</p>

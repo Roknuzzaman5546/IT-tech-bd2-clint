@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: "/mycard",
         element: <Privetrout><Mycard></Mycard></Privetrout>,
-        loader: () => fetch('https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/card')
+        loader: () => fetch('http://localhost:5000/card')
       },
       {
         path: "/login",
@@ -45,17 +45,17 @@ const router = createBrowserRouter([
       {
         path: "/brandproducts/:id",
         element: <Privetrout><Brandproducts></Brandproducts></Privetrout>,
-        loader: () => fetch('https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/product')
+        loader: () => fetch('http://localhost:5000/product')
       },
       {
         path: "/carddetails/:id",
         element: <Carddetails></Carddetails>,
-        loader: () => fetch('https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/product')
+        loader: () => fetch('http://localhost:5000/product')
       },
       {
         path: "/updatproducts/:id",
         element: <Updatecrads></Updatecrads>,
-        loader: ({ params }) => fetch(`https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/product/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
       },
       {
         path: "/register",
@@ -68,7 +68,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Authprovider>
-      <RouterProvider router={router} />
+      <div> 
+        <RouterProvider router={router} />
+      </div>
     </Authprovider>
   </React.StrictMode>,
 )

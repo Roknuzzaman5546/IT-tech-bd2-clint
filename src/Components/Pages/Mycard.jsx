@@ -1,13 +1,22 @@
 import { useLoaderData } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Authcontext } from "../Authprovider/Authprovider";
+import 'aos/dist/aos.css';
+import Aos from "aos";
 
 const Mycard = () => {
     const { user } = useContext(Authcontext)
     const loadedmycards = useLoaderData();
     const filterUser = loadedmycards.filter(card => card.useremail === user.email)
     const [reaminguser, setUser] = useState(filterUser)
+
+    useEffect(() => {
+        Aos.init({
+            duration: 700,
+            offset: 200
+        });
+    }, []);
 
     const handleDelet = (id) => {
         console.log(id)
@@ -21,20 +30,20 @@ const Mycard = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assingment10-project-server-h5qum2jl3-rokonuzzamans-projects.vercel.app/card/${id}`, {
+                fetch(`http://localhost:5000/card/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                            const remaings = filterUser.filter(cards => cards._id !== id)
-                            setUser(remaings)
-                        
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        const remaings = filterUser.filter(cards => cards._id !== id)
+                        setUser(remaings)
+
                     })
             }
         })
@@ -42,8 +51,8 @@ const Mycard = () => {
 
     return (
         <div className=" w-11/12 mx-auto">
-            <h2 className=" text-center font-rancho underline text-4xl text-gray-600 font-bold mt-10">Your all add products here</h2>
-            <div className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4 mt-10">
+            <h2 data-aos="zoom-out" className=" text-center font-rancho underline text-4xl text-gray-600 font-bold mt-10">Your all add products here</h2>
+            <div data-aos="zoom-in" className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4 mt-10">
                 {
                     reaminguser.map(mycard => <div key={mycard._id}>
                         <div className="card bg-gray-400 border-2 border-lime-600 h-96 shadow-xl">

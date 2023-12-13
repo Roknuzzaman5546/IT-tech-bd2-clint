@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
+
 const Productsdetails = ({ product }) => {
     const { name, photo, brand, _id, rating, price } = product;
+    
 
     return (
         <div>
